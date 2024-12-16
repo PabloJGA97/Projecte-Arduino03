@@ -15,15 +15,18 @@ fi
 # Verificar connectivitat i estat del servei de la base de dades PostgresSQL
 
 pg_host="192.168.33.8"
-pg_user="admin"  
-pg_password="c0still4!"  
+pg_user="professor"  
+pg_password="pditicbcn"  
 pg_database="project_bbdd"  
+
 export PGPASSWORD="$pg_password"
 
 bbdd_service="postgresql.service"
 
 # Revisa l'estatus del servei postgresql
-if systemctl is-active --quiet "$bbdd_service"; then
+systemctl is-active --quiet "$bbdd_service";
+
+if [ $? -eq 0 ]; then
     echo "$timestamp PostgreSQL servei està funcionant correctament."
 else
     echo "$timestamp ALERTA: PostgreSQL servei NO està funcionant!"
@@ -36,7 +39,7 @@ psql -h "$pg_host" -U "$pg_user" -d "$pg_database" -c "\dt;" > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo "$timestamp la base de dades '$pg_database' està funcionant i té connectivitat."
 else
-    echo "$timestamp ALERTA: no es pot connecta a la base de dades '$pg_database'."
+    echo "$timestamp ALERTA: no es pot connectar a la base de dades '$pg_database'."
 fi
 
 
