@@ -2,7 +2,7 @@
 # Verificar l'estat de AWS IoT
 
 aws_iot_endpoint="a302ucw63g5l7h-ats.iot.us-east-1.amazonaws.com"
-status=$(aws iot describe-endpoint --endpoint-type iot:Data-ATS --output text --query 'endpointAddress')
+status=$(aws iot describe-endpoint --endpoint-type iot:Data-ATS --output text --query 'endpointAddress' 2>/dev/null)
 timestamp=$(date '+%Y-%m-%d %H:%M:%S')
 
 if [ "$status" == "$aws_iot_endpoint" ]; then
