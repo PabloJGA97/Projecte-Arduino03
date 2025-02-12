@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinantia</title>
+    <link rel="stylesheet" href="professor.css">
+</head>
+<body>
+    <header>
+        <img src="https://agora.xtec.cat/iticbcn/wp-content/uploads/usu2389/2023/06/cropped-Imagotipo-1.png" alt="">
+        <h1>ITICBCN</h1>
+    </header>
+
+    <div class="header">
+        <div class="form-group">
+            <h1>Passar llista</h1>
+            <label for="fecha">Selecciona el dia:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            
+            <label for="asignatura">Selecciona l'assignatura:</label>
+            <select id="asignatura" name="asignatura" required>
+                <option>M7</option>
+                <option>M8</option>
+            </select>
+            
+            <label for="grupo">Selecciona el grup:</label>
+            <select id="grupo" name="grupo" required>
+                <option>DAW</option>
+                <option>DAM</option>
+            </select>
+
+            <button id="consultarBtn">Consultar Assistència</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="error" id="error" style="display: none;"></div>
+        
+        <div class="table-container" id="resultContainer" style="display: none;">
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Nom de l'Alumne</th>
+                        <th>Present</th>
+                        <th>Absent</th>
+                    </tr>
+                </thead>
+                <tbody id="asistenciaData">
+                    
+                </tbody>
+            </table>
+            <button id="pasarListaBtn">Pasar Lista</button>
+        </div>
+    </div>
+
+    <script src="professor.js"></script>
+</body>
+</html>

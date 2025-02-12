@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <img src="https://agora.xtec.cat/iticbcn/wp-content/uploads/usu2389/2023/06/cropped-Imagotipo-1.png" alt="">
+        <h1>ITICBCN</h1>
+    </header>
+    
+    <div class="header">
+
+        <div class="form-group">
+            <h1>Gestio d'alumnes i professors</h1>
+            <h3>Afegir alumne o professor</h3>
+            <label for="userName">Nom:</label>
+            <input type="text" id="userName" name="userName" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="role">Rol:</label>
+            <select id="role" name="role" required>
+                <option value="alumno">Alumne</option>
+                <option value="profesor">Professor</option>
+            </select>
+
+            <button id="addUserBtn">Afegir usuari</button>
+        </div>
+        
+        <div class="form-group">
+            <label for="userSelect">Escull l'usuari:</label>
+            <select id="userSelect" name="userSelect" required>
+            </select>
+            <button id="removeUserBtn">Eliminar usuari</button>
+        </div>
+        
+        <a href="adminprofessor.html">
+            <button id="passListBtn">Pasar Lista</button>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="error" id="error" style="display: none;"></div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

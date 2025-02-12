@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinantia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="https://agora.xtec.cat/iticbcn/wp-content/uploads/usu2389/2023/06/cropped-Imagotipo-1.png" alt="Logo ITICBCN">
+        <h1>ITICBCN</h1>
+    </header>
+    <div class="header">
+        <div class="form-group">
+            <h1>Consultar la teva assistència</h1>
+            <label for="id_alumno">El teu ID:</label>
+            <input type="text" id="id_alumno" name="id_alumno" required placeholder="Escriu el teu ID">
+            <label for="fecha">Posa el dia que vols consulta:</label>
+            <input type="text" id="fecha" name="fecha" required>
+            <button id="consultarBtn">Consultar</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Mensaje de error -->
+        <div class="error" id="error" style="display: none; color: red;"></div>
+        
+        <!-- Tabla de resultados -->
+        <div class="table-container" id="resultContainer" style="display: none;">
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Hora de Inici</th>
+                        <th>Hora de Fin</th>
+                        <th>Estat</th>
+                        <th>Aula</th>   
+                        <th>Assignatura</th>
+                    </tr>
+                </thead>
+                <tbody id="asistenciaData">
+                    <!-- Resultados dinámicos se agregan aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
